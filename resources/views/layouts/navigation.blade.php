@@ -17,8 +17,12 @@
                     </x-nav-link>
 
                     @if (auth()->user()->hasRole('admin'))
-                        <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
-                            {{ __('Admin') }}
+                        <x-nav-link :href="route('admin.roles.index')" :active="request()->routeIs('admin.roles.index')">
+                            Roles
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('admin.permissions.index')" :active="request()->routeIs('admin.permissions.index')">
+                            Permissions
                         </x-nav-link>
                     @endif
                 </div>
