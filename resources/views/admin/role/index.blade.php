@@ -42,7 +42,8 @@
                                             {{ $role->name }}
                                         </td>
                                         <td class="whitespace-nowrap px-3 py-4 text-sm">
-                                            <a href="" class="text-indigo-700 underline">Edit</a>
+                                            <a href="{{ route('admin.roles.edit', $role->id) }}"
+                                                class="text-indigo-700 underline">Edit</a>
                                         </td>
 
                                     </tr>
