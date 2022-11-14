@@ -21,13 +21,13 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-200 bg-white">
-                                @foreach ($roles as $role)
+                                @foreach ($permissions as $permission)
                                     <tr>
                                         <td
                                             class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-semibold text-gray-900 sm:pl-6">
                                             {{ $loop->index + 1 }}</td>
                                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                            {{ $role->name }}
+                                            {{ $permission->name }}
                                         </td>
                                         <td class="whitespace-nowrap px-3 py-4 text-sm">
                                             <a href="" class="text-indigo-700 underline">Edit</a>
