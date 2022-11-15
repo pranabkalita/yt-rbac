@@ -25,6 +25,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('/admin')->group(function () {
     Route::resource('/roles', RoleController::class);
+    Route::post('/roles/{role}/permissions', [RoleController::class, 'permissions'])->name('roles.permissions');
 
     Route::resource('/permissions', PermissionController::class);
 });
