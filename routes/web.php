@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,8 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('/admin')->gro
     Route::post('/roles/{role}/permissions', [RoleController::class, 'permissions'])->name('roles.permissions');
 
     Route::resource('/permissions', PermissionController::class);
+
+    Route::resource('/users', UserController::class);
 });
 
 require __DIR__ . '/auth.php';
