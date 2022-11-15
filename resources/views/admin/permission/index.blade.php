@@ -42,8 +42,20 @@
                                             {{ $permission->name }}
                                         </td>
                                         <td class="whitespace-nowrap px-3 py-4 text-sm">
-                                            <a href="{{ route('admin.permissions.edit', $permission->id) }}"
-                                                class="text-indigo-700 underline">Edit</a>
+                                            <div class="flex">
+                                                <a href="{{ route('admin.permissions.edit', $permission->id) }}"
+                                                    class="text-indigo-700 underline mr-5">Edit</a>
+
+                                                <form method="POST"
+                                                    action="{{ route('admin.permissions.destroy', $permission->id) }}"
+                                                    onsubmit="return confirm('Are you sure ?')">
+                                                    @csrf
+                                                    @method('DELETE')
+
+                                                    <button type="submit"
+                                                        class="text-red-700 underline">Delete</button>
+                                                </form>
+                                            </div>
                                         </td>
 
                                     </tr>
