@@ -9,11 +9,6 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="max-w-7xl mx-auto">
 
-                <div class="flex justify-end">
-                    <a href="{{ route('admin.users.create') }}"
-                        class="px-4 py-2 bg-blue-400 hover:bg-blue-600 rounded text-white">New User</a>
-                </div>
-
                 <div class="inline-block min-w-full py-2 align-middle">
                     <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
                         <table class="min-w-full divide-y divide-gray-300">
@@ -53,11 +48,11 @@
 
                                         <td class="whitespace-nowrap px-3 py-4 text-sm">
                                             <div class="flex">
-                                                <a href="{{ route('admin.roles.edit', $user->id) }}"
+                                                <a href="{{ route('admin.users.edit', $user->id) }}"
                                                     class="text-indigo-700 underline mr-5">Edit</a>
 
                                                 <form method="POST"
-                                                    action="{{ route('admin.roles.destroy', $user->id) }}"
+                                                    action="{{ route('admin.users.destroy', $user->id) }}"
                                                     onsubmit="return confirm('Are you sure ?')">
                                                     @csrf
                                                     @method('DELETE')
