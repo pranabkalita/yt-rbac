@@ -39,17 +39,21 @@
                                         </td>
                                         <td class="whitespace-nowrap px-3 py-4 text-sm">
                                             <div class="flex">
-                                                <a href="{{ route('posts.edit', $post->id) }}"
-                                                    class="text-indigo-700 underline mr-5">Edit</a>
+                                                @can('update', $post)
+                                                    <a href="{{ route('posts.edit', $post->id) }}"
+                                                        class="text-indigo-700 underline mr-5">Edit</a>
+                                                @endcan
 
-                                                <form method="POST" action="{{ route('posts.destroy', $post->id) }}"
-                                                    onsubmit="return confirm('Are you sure ?')">
-                                                    @csrf
-                                                    @method('DELETE')
+                                                @can('delete', $post)
+                                                    <form method="POST" action="{{ route('posts.destroy', $post->id) }}"
+                                                        onsubmit="return confirm('Are you sure ?')">
+                                                        @csrf
+                                                        @method('DELETE')
 
-                                                    <button type="submit"
-                                                        class="text-red-700 underline">Delete</button>
-                                                </form>
+                                                        <button type="submit"
+                                                            class="text-red-700 underline">Delete</button>
+                                                    </form>
+                                                @endcan
                                             </div>
                                         </td>
 
